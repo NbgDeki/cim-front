@@ -5,21 +5,131 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Webpack 2 Basics</title>
+    <title>CIM Italian Style</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 </head>
 <body>
-<div class="container">
-    <h1>Let's learn Webpack 2</h1>
-    <p>
-        <i class="fas fa-user"></i>
-        <i class="fas fa-flag"></i>
-    </p>
-    <div>
-        <img src="img/1.png" alt="webpack" class="img-fluid">
+<nav id="side-menu">
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="heading1">
+                <h5 class="mb-0">
+                    <a href="#">Corporate</a>
+                </h5>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="heading2">
+                <h5 class="mb-0">
+                    <a href="#">Promotions</a>
+                </h5>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="heading3">
+                <h5 class="mb-0">
+                    <a href="#">News</a>
+                </h5>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="heading4">
+                <h5 class="mb-0">
+                    <a href="#">Partnership</a>
+                </h5>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="heading5">
+                <h5 class="mb-0">
+                    <a href="#">Collections</a>
+                    <div class="plusic collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </h5>
+            </div>
+            <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordion">
+                <div class="card-body">
+                    <p><a href="#">Day Collection</a></p>
+                    <p><a href="#">Kitchens </a></p>
+                    <p><a href="#">Night Collection</a></p>
+                    <p><a href="#">Contract</a></p>
+                    <p><a href="#">Lux Life</a></p>
+                    <p><a href="#">Gifts</a></p>
+                    <p><a href="#">Carpets</a></p>
+                    <p><a href="#">Lightning</a></p>
+                    <p><a href="#">Brand Names</a></p>
+                </div>
+            </div>
+        </div>
     </div>
-    <button id="randomInt">A random Integer</button>
-    <button id="randomRange">A random Integer in a Range</button>
-    <p id="outputParagraph">You can't see this all the time</p>
+</nav>
+<div id="site-content">
+    <div class="container-fluid" style="position: fixed; z-index: 2">
+        <div class="container">
+            <i class="fas fa-bars" id="trigger"></i>
+            <nav class="navbar justify-content-end">
+                <div id="logo">
+                    <img src="img/logo.png" alt="cim">
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" href="#">Corporate</a>
+                    <div class='box'></div>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" href="#">Promotions</a>
+                    <div class='box'></div>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" href="#">News</a>
+                    <div class='box'></div>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" href="#">Partnership</a>
+                    <div class='box'></div>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" href="#">Collections</a>
+                </div>
+                <div class="nav-item lang">
+                    <a class="nav-link" href="#"><span class="active">eng</span> <span>ita</span></a>
+                </div>
+            </nav>
+        </div>
+    </div><!-- .container-fluid -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="collections">
+                <div class="js-hover">
+                    Collections
+                    <ul>
+                        <li><a href="#">Day Collection</a></li>
+                        <li><a href="#">Kitchens </a></li>
+                        <li><a href="#">Night Collection</a></li>
+                        <li><a href="#">Contract</a></li>
+                        <li><a href="#">Lux Life</a></li>
+                        <li><a href="#">Gifts</a></li>
+                        <li><a href="#">Carpets</a></li>
+                        <li><a href="#">Lightning</a></li>
+                        <li><a href="#">Brand Names</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="slider">
+                <div style="background-image: url('../img/slider1.jpg')"></div>
+                <div style="background-image: url('../img/slider1.jpg')"></div>
+            </div>
+        </div>
+    </div>
 </div>
+<script>
+    $(document).ready(function(){
+        $('.slider').bxSlider();
+    });
+</script>
 </body>
 </html>

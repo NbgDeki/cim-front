@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+
+#side-menu{
+  position: fixed;
+  display: block;
+  width: 280px;
+  height: 100vh;
+  background-color: $primary;
+  z-index: 999;
+
+  -webkit-transition: all 0.5s; /* Safari */
+  transition: all 0.5s;
+
+  -ms-transform: translate(-280px, 0); /* IE 9 */
+  -webkit-transform: translate(-280px, 0); /* Safari */
+  transform: translate(-280px, 0);
+
+  &.active{
+    -ms-transform: translate(0, 0); /* IE 9 */
+    -webkit-transform: translate(0, 0); /* Safari */
+    transform: translate(0, 0);
+
+    + #site-content{
+      -ms-transform: translate(280px, 0); /* IE 9 */
+      -webkit-transform: translate(280px, 0); /* Safari */
+      transform: translate(280px, 0);
+    }
+  }
+
+  #accordion{
+    .card{
+      border-radius: 0;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+
+      .card-header{
+        position: relative;
+        background-color: $primary;
+
+        a{
+          font-family: 'Lato', sans-serif;
+          font-size: 18px;
+          color: white;
+        }
+
+        .plusic{
+          position: absolute;
+          top: 12px;
+          right: 15px;
+
+          svg{
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .card-body{
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+      }
+    }
+  }
+
+}
+
+#site-content{
+  min-height: 2100px;
+
+  -webkit-transition: all 0.5s; /* Safari */
+  transition: all 0.5s;
+
+  #trigger{
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    display: none;
+    cursor: pointer;
+
+    @include max-breakpoint(sm){
+      display: block;
+    }
+  }
+
+  #hover-over{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.7;
+    background-color: black;
+  }
+
+  .collections{
+    display: block;
+    width: 200px;
+    height: auto;
+    position: absolute;
+    top: 133px;
+    left: 50%;
+    margin-left: -553px;
+    z-index: 6;
+
+    ul{
+      list-style: none;
+      border-left: 1px solid white;
+      height: 0;
+      overflow-y: hidden;
+      margin-top: 30px;
+
+      -webkit-transition: all 0.5s; /* Safari */
+      transition: all 0.5s;
+
+      &.open{
+        height: 457px;
+      }
+
+      li{
+        font-family: 'Lato', sans-serif;
+        font-weight: 300;
+        font-size: 22px;
+        margin-bottom: 20px;
+        text-transform: capitalize;
+
+        &:last-child{
+          margin-bottom: 0;
+        }
+
+        a{
+          color: white;
+
+          -webkit-transition: all 0.5s; /* Safari */
+          transition: all 0.5s;
+
+          &:hover{
+            text-decoration: none;
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+
+    .js-hover{
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      font-size: 30px;
+      text-transform: uppercase;
+      color: white;
+
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
+
+  .navbar{
+    height: 100px;
+    z-index: 5;
+
+    #logo{
+      position: absolute;
+      left: 0;
+      top: 0;
+      padding: 20px 0;
+    }
+
+    .nav-item{
+      position: relative;
+
+      @include max-breakpoint(md){
+        display: none;
+      }
+
+      &:last-child{
+        margin-left: 40px;
+
+        .nav-link{
+
+          &:hover{
+            opacity: 1;
+          }
+        }
+
+        span{
+          margin-right: 13px;
+          text-transform: lowercase;
+          opacity: 0.5;
+
+          -webkit-transition: all 0.5s; /* Safari */
+          transition: all 0.5s;
+
+          &.active{
+            opacity: 1;
+          }
+
+          &:hover{
+            opacity: 1;
+          }
+        }
+      }
+
+      .box{
+        display: block;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        right: -5px;
+        top: 14px ;
+        background: $primary;
+      }
+
+      .nav-link{
+        text-transform: uppercase;
+        color: white;
+        font-family: 'Lato', sans-serif;
+        font-size: 14px;
+        font-weight: 300;
+
+        -webkit-transition: all 0.5s; /* Safari */
+        transition: all 0.5s;
+
+        &:hover{
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+  .bx-wrapper{
+    border: none;
+  }
+
+  .slider{
+
+    > div{
+      width: 100vw;
+      height: 100vh;
+
+      background-position: top center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+}
+

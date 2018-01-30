@@ -1,29 +1,33 @@
 import 'jquery';
+import 'bootstrap';
 import '../css/main.scss';
 
 
 import fontawesome from '@fortawesome/fontawesome';
-import faUser from '@fortawesome/fontawesome-free-solid/faUser';
-import faFlag from '@fortawesome/fontawesome-free-solid/faFlag';
+import faPlus from '@fortawesome/fontawesome-free-solid/faPlus';
+import faBars from '@fortawesome/fontawesome-free-solid/faBars';
 
 // Add the icon to the library so you can use it in your page
-fontawesome.library.add(faUser, faFlag);
+fontawesome.library.add(faPlus, faBars);
 
+$(function () {
+    $('.collapse').collapse('hide');
+    $('#trigger').click(function(){
+        $('#side-menu').toggleClass('active');
 
-import { RandomGenerator } from './random-generator';
+        if($('#side-menu').hasClass('active')){
+            $('#site-content').append('<div id="hover-over"></div>');
 
-const outputParagraph = $('#outputParagraph');
+            $('#hover-over').click(function () {
+                $(this).remove();
+                $('#side-menu').removeClass('active');
+            });
+        }
+    });
 
-const outputRandomInt = () => {
-    outputParagraph.text(RandomGenerator.randomInteger());
-};
-
-const outputRandomRange = () => {
-    outputParagraph.text(RandomGenerator.randomRange(1, 500));
-};
-
-const buttonRndInt = jQuery('#randomInt');
-const buttonRndRange = $('#randomRange');
-
-buttonRndInt.click(outputRandomInt);
-buttonRndRange.click(outputRandomRange);
+    $('.js-hover').hover(function () {
+        $(this).find('ul').addClass('open');
+    }, function () {
+        $(this).find('ul').removeClass('open');
+    });
+});
