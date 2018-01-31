@@ -38,5 +38,25 @@ $(function () {
         $(this).find('ul').removeClass('open');
     });
 
+    var stickyNavTop = $('.slider').offset().top;
+    console.log(stickyNavTop);
 
+
+    var stickyNav = function(){
+        var scrollTop = $(window).scrollTop(); // our current vertical position from the top
+
+        if (scrollTop > stickyNavTop) {
+            $('#menu-toggle').css({'position': 'fixed', 'top': '0', 'z-index': '9999' });
+            $('#menu-toggle').find('img').css({'opacity': '0'});
+        } else {
+            $('#menu-toggle').css({'position': 'static'});
+            $('#menu-toggle').find('img').css({'opacity': '1'});
+        }
+    };
+
+    stickyNav();
+    // and run it again every time you scroll
+    $(window).scroll(function() {
+        stickyNav();
+    });
 });

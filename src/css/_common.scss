@@ -78,6 +78,11 @@ body{
   -webkit-transition: all 0.5s; /* Safari */
   transition: all 0.5s;
 
+  .fluid-nav{
+    position: fixed;
+    z-index: 2;
+  }
+
   #trigger{
     font-size: 30px;
     color: white;
@@ -547,6 +552,7 @@ body{
     ul{
       list-style: none;
       padding-left: 0;
+      margin-bottom: 0;
 
       svg{
         color: white;
