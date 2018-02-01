@@ -81,6 +81,9 @@ body{
   .fluid-nav{
     position: fixed;
     z-index: 2;
+
+    -webkit-transition: all 0.5s; /* Safari */
+    transition: all 0.5s;
   }
 
   #trigger{
@@ -346,6 +349,13 @@ body{
             opacity: 0.7;
           }
 
+          a{
+
+            &.btn{
+              display: block;
+            }
+          }
+
         }
 
         h5{
@@ -387,8 +397,11 @@ body{
         }
 
         a{
+          -webkit-transition: all 0.5s; /* Safari */
+          transition: all 0.5s;
 
           &.btn{
+            display: none;
             background-color: transparent;
             color: white;
             border: 1px solid white;
