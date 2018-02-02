@@ -398,10 +398,14 @@ body{
   .large-border{
     background-color: $primary;
     height: 80px;
+    @include max-breakpoint(xs){
+      margin-top: -30px;
+    }
   }
 
   .parent-flex-container{
     padding: 0;
+    display: none;
 
     .flex-container{
       width: 100%;
@@ -519,10 +523,11 @@ body{
 
       .item{
         display: block;
-        width: 370px;
+       width: fit-content;
         height: auto;
         margin: 0 auto;
-        padding-left: 5px;
+        // padding-left: 5px;
+
         .text-holder{
           padding: 20px;
 
@@ -576,10 +581,11 @@ body{
         display: block;
         width: 40px;
         height: 16px;
+        z-index: 10 !important;
         @include media-breakpoint-down(sm) {
           position: absolute;
           left: 245px;
-          top: 395px;
+          top: 460px;
         }
         @include media-breakpoint-down(xs) {
          display: none;
