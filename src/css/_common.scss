@@ -1,9 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400');
-
+.bx-controls-direction{
+  display: none;
+}
 body{
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+}
+
+.container{
+  @include media-breakpoint-up(xs) {}
+  @include media-breakpoint-up(sm) {
+    max-width: 526px;
+  }
+  @include media-breakpoint-up(md) {
+    max-width: 720px;
+  }
+  @include media-breakpoint-up(lg) {
+    max-width: 940px;
+  }
+  @include media-breakpoint-up(xl) {
+    max-width: 1200px;
+  }
 }
 
 #side-menu{
@@ -43,7 +61,7 @@ body{
       .card-header{
         position: relative;
         background-color: $primary;
-
+        border-radius: 0;
         a{
           font-family: 'Lato', sans-serif;
           font-size: 18px;
@@ -55,10 +73,18 @@ body{
           top: 12px;
           right: 15px;
 
+          &.collapsed{
+
+            svg{
+              transform: rotate(0deg);
+            }
+          }
+
           svg{
             color: white;
             font-size: 16px;
             cursor: pointer;
+            transform: rotate(45deg);
           }
         }
       }
@@ -84,6 +110,7 @@ body{
 
     -webkit-transition: all 0.5s; /* Safari */
     transition: all 0.5s;
+
   }
 
   #trigger{
@@ -95,8 +122,10 @@ body{
     display: none;
     cursor: pointer;
 
-    @include max-breakpoint(sm){
+
+    @include max-breakpoint(md){
       display: block;
+      z-index: 9999 !important;
     }
   }
 
@@ -107,22 +136,33 @@ body{
     left: 0;
     z-index: 999;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     opacity: 0.7;
     background-color: black;
   }
-
+  
   .collections{
     display: block;
     width: 200px;
     height: auto;
     position: absolute;
-    top: 133px;
+    top: 150px;
     left: 50%;
     margin-left: -553px;
     z-index: 6;
-
+    @include max-breakpoint(md){
+      display: none;
+    }
+    // @include min-breakpoint(md){
+    //   left: 60%;
+    //   top: 135px;
+    // }
+    @include media-breakpoint-between(md, lg) {
+      left: 60%;
+      top: 135px;
+    }
     ul{
+      width:760px;
       list-style: none;
       border-left: 1px solid white;
       height: 0;
@@ -133,16 +173,27 @@ body{
       transition: all 0.5s;
 
       &.open{
-        height: 457px;
+        height: fit-content;
+      }
+      &#double{
+        li{
+          @include max-breakpoint(xl){
+            width:50%;
+          }
+        }
+        
       }
 
       li{
+        float:left;
+  display:inline;
         font-family: 'Lato', sans-serif;
         font-weight: 300;
         font-size: 22px;
         margin-bottom: 20px;
         text-transform: capitalize;
-
+        line-height: 100%;
+        width: 100%;
         &:last-child{
           margin-bottom: 0;
         }
@@ -159,6 +210,7 @@ body{
           }
         }
       }
+      
     }
 
     .js-hover{
@@ -183,6 +235,10 @@ body{
       left: 0;
       top: 0;
       padding: 20px 0;
+      @include max-breakpoint(md){
+        width: 100%;
+        text-align: center;
+      }
     }
 
     .nav-item{
@@ -250,31 +306,52 @@ body{
   .bx-wrapper{
     border: none;
     margin-bottom: 0;
-
+    background-color: #000;
     .bx-pager{
       display: none;
     }
   }
-
-  .slider{
-    height: 700px;
-
+  .slider2{
+    height: auto;
+    @include min-breakpoint(md){
+      display: none;
+    }
     > div{
       width: 100vw;
-      height: 700px;
+      height: auto;
+      background-size: cover; 
+      background-repeat: no-repeat;
+      background-position: top center;
 
       img{
-        height: 100%;
+        height: auto;
+        width: 100%;
+        opacity: .4;
+      }
+    }
+  }
+  .slider{
+    height: auto;
+    @include max-breakpoint(md){
+      display: none;
+    }
+    > div{
+      width: 100vw;
+      height: auto;
+      background-size: cover; 
+      background-repeat: no-repeat;
+      background-position: top center;
+
+      img{
+        height: auto;
+        width: 100%;
+        opacity: .4;
       }
     }
   }
 
   .two-parts{
-    min-height: 530px;
-    background-image: url('../img/section-2.jpg');
-    background-size: cover;
-    background-position: top center;
-    background-repeat: no-repeat;
+   
 
     .left-side{
       padding: 0;
@@ -286,17 +363,17 @@ body{
     }
 
     .right-side{
-      padding: 80px;
+      padding: 55px;
 
       h2{
         font-family: 'Lato', sans-serif;
         text-transform: uppercase;
         color: $primary;
         font-size: 30px;
-        margin-bottom: 60px;
+        margin-bottom: 40px;
       }
 
-      h4{
+      h1{
         font-family: 'Lato', sans-serif;
         font-size: 20px;
         color: $primary;
@@ -416,6 +493,9 @@ body{
   }
 
   .carousel{
+    .news{
+      padding: 0 30px;
+    }
     h5{
       margin-top: 60px;
       font-family: 'Lato', sans-serif;
@@ -441,7 +521,8 @@ body{
         display: block;
         width: 370px;
         height: auto;
-
+        margin: 0 auto;
+        padding-left: 5px;
         .text-holder{
           padding: 20px;
 
@@ -495,6 +576,14 @@ body{
         display: block;
         width: 40px;
         height: 16px;
+        @include media-breakpoint-down(sm) {
+          position: absolute;
+          left: 245px;
+          top: 395px;
+        }
+        @include media-breakpoint-down(xs) {
+         display: none;
+        }
 
         .owl-prev{
           display: block;
@@ -502,6 +591,7 @@ body{
           height: 16px;
           background-image: url('../img/left-arrow.png');
           float: left;
+          
         }
 
         .owl-next{
@@ -510,6 +600,7 @@ body{
           height: 16px;
           background-image: url('../img/right-arrow.png');
           float: right;
+          
         }
       }
 
@@ -519,14 +610,41 @@ body{
   .footer-back{
     background-color: $footer-back;
   }
-
+  
   footer{
+    .kolekcije2{
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+    
+    }
     padding: 50px 0;
-
+    .terms{
+      @include media-breakpoint-down(xs) {
+        margin-bottom: 0px;
+        text-align: center;
+      }
+    }
+    .logo-social{
+      @include media-breakpoint-down(xs) {
+        margin-bottom: 30px;
+        text-align: center;
+      }
+    }
+    .kontakt{
+      @include media-breakpoint-down(sm) {
+        margin-top: 30px;
+      }
+      @include media-breakpoint-down(xs) {
+        text-align: center;
+      }
+    }
     p{
       text-transform: uppercase;
       color: white;
-
+      @include media-breakpoint-down(xs) {
+        margin-bottom: 0px;
+      }
       a{
 
         color: white;
@@ -544,14 +662,19 @@ body{
         margin-top: 20px;
         position: relative;
         a{
-          position: absolute;
+          
 
           &:first-child{
-            left: 35px;
-          }
+            margin-left: 35px;
+            
+              @include media-breakpoint-down(xs) {
+                margin-left: 0;
+              }
+            }
+          
 
           &:nth-child(2){
-            left: 83px;
+            margin-left: 20px;
           }
 
           svg{
