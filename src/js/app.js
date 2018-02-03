@@ -62,7 +62,10 @@ $(function () {
     $("#collections").click(function(e) {
         e.preventDefault();
         $('html, body').animate({
-            scrollTop: $(".parent-flex-container").offset().top - 100
+            scrollTop: $("#grid1").offset().top - 100
         }, 500);
     });
+
+
+  
 });

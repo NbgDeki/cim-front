@@ -7,7 +7,15 @@ body{
   padding: 0;
   overflow-x: hidden;
 }
+::-moz-selection { /* Code for Firefox */
+  color: #fff;
+  background: $primary;
+}
 
+::selection {
+  color: #fff;
+  background: $primary;
+}
 .container{
   @include media-breakpoint-up(xs) {}
   @include media-breakpoint-up(sm) {
@@ -62,10 +70,15 @@ body{
         position: relative;
         background-color: $primary;
         border-radius: 0;
+        transition: all .3s ease;
+        &:hover{
+          opacity: .7;
+        }
         a{
           font-family: 'Lato', sans-serif;
           font-size: 18px;
           color: white;
+          text-decoration: none;
         }
 
         .plusic{
@@ -92,6 +105,11 @@ body{
       .card-body{
         padding-left: 2.5rem;
         padding-right: 2.5rem;
+        p{
+          a{
+            text-decoration: none;
+          }
+        }
       }
     }
   }
