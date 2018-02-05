@@ -420,6 +420,9 @@ body{
         border-radius: 0;
         font-family: 'Lato', sans-serif;
         color: white;
+         @include max-breakpoint(xs){
+          margin-bottom: 25px;
+        }
       }
     }
   }
@@ -599,6 +602,9 @@ body{
                 border-bottom: 1px solid $secondary;
               }
             }
+          }
+          .btn-primary{
+    
           }
         }
       }
