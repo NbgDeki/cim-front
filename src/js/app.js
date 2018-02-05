@@ -13,6 +13,7 @@ import faFacebookF from '@fortawesome/fontawesome-free-brands/faFacebookF';
 import faInstagram from '@fortawesome/fontawesome-free-brands/faInstagram';
 import faEnvelope from '@fortawesome/fontawesome-free-regular/faEnvelope';
 
+
 // Add the icon to the library so you can use it in your page
 fontawesome.library.add(faPlus, faBars, faAngleRight, faFacebookF, faInstagram, faMapMarkerAlt, faPhone, faEnvelope);
 
