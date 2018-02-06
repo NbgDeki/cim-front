@@ -12,10 +12,13 @@ import faPhone from '@fortawesome/fontawesome-free-solid/faPhone';
 import faFacebookF from '@fortawesome/fontawesome-free-brands/faFacebookF';
 import faInstagram from '@fortawesome/fontawesome-free-brands/faInstagram';
 import faEnvelope from '@fortawesome/fontawesome-free-regular/faEnvelope';
+import faLinkedin from '@fortawesome/fontawesome-free-brands/faLinkedin';
+import faPinterestSquare from '@fortawesome/fontawesome-free-brands/faPinterestSquare';
+
 
 
 // Add the icon to the library so you can use it in your page
-fontawesome.library.add(faPlus, faBars, faAngleRight, faFacebookF, faInstagram, faMapMarkerAlt, faPhone, faEnvelope);
+fontawesome.library.add(faPlus, faBars, faAngleRight, faFacebookF, faInstagram, faMapMarkerAlt, faPhone, faEnvelope, faLinkedin, faPinterestSquare);
 
 $(function () {
     $('.collapse').collapse('hide');
@@ -40,13 +43,15 @@ $(function () {
     });
 
     if($('.slider').length > 0){
-        var height = $('.slider').height();
+        var height = $('.bx-wrapper').height();
+        console.log(height);
 
         var stickyNav = function(){
             var scrollTop = $(window).scrollTop(); // our current vertical position from the top
+            console.log(scrollTop);
 
             if (scrollTop + 100 > height) {
-                $('.fluid-nav').css({'background-color': 'rgba(0,0,0,0.5)' });
+                $('.fluid-nav').css({'background-color': 'rgba(0,0,0,1)' });
             } else {
                 $('.fluid-nav').css({'background-color': 'transparent' });
             }
@@ -57,7 +62,7 @@ $(function () {
             stickyNav();
         });
     }else{
-        $('.fluid-nav').css({'background-color': 'rgba(0,0,0,0.5)' });
+        $('.fluid-nav').css({'background-color': 'rgba(0,0,0,1)' });
     }
 
     $("#collections").click(function(e) {
@@ -67,6 +72,36 @@ $(function () {
         }, 500);
     });
 
+    $('.location-icon').mouseover(function(){
+        $('.fixed-nav').css({'background-color':'rgba(0,0,0,0.4)'});
+        $('.phone-p').find('p').css({'color':'#fff'});
+        $('.location-p').find('p').css({'color':'#fff'});
+        $(this).fadeIn(500);
+    });
+    $('.location-icon').mouseleave(function(){
+        $('.fixed-nav').css({'background-color':'transparent'});
+        $('.phone-p').find('p').css({'color':'transparent'});
+        $('.location-p').find('p').css({'color':'transparent'});
+        
+    });
+    $('.phone-icon').mouseover(function(){
+        $('.fixed-nav').css({'background-color':'rgba(0,0,0,0.4)'});
+        $('.phone-p').find('p').css({'color':'#fff'});
+        $('.location-p').find('p').css({'color':'#fff'});
+        $(this).fadeIn(500);
+    });
+    $('.phone-icon').mouseleave(function(){
+        $('.fixed-nav').css({'background-color':'transparent'});
+        $('.phone-p').find('p').css({'color':'transparent'});
+        $('.location-p').find('p').css({'color':'transparent'});
+        
+    });
 
+    $('.bx-wrapper').mouseover(function(){
+        $('.bx-controls-direction').fadeIn(500);
+    });
+    $('.bx-wrapper').mouseleave(function(){
+        $('.bx-controls-direction').fadeOut(500);
+    });
   
 });
