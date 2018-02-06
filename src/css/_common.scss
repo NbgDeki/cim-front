@@ -279,12 +279,13 @@ body{
       margin-top: 30px;
 
       -webkit-transition: all 0.5s; /* Safari */
-      transition: all 0.5s;
+      transition: all 0.5s ease;
 
       &.open{
         height: fit-content;
       }
       &#double{
+        transition: all 0.5s ease;
         li{
           @include max-breakpoint(xl){
             width:50%;

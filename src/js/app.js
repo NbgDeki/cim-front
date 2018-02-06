@@ -42,6 +42,12 @@ $(function () {
         $(this).find('ul').removeClass('open');
     });
 
+    // $('.js-hover').hover(function () {
+    //     $(this).find('ul').fadeIn(500);
+    // }, function () {
+    //     $(this).find('ul').fadeOut(500);
+    // });
+
     if($('.slider').length > 0){
         var height = $('.bx-wrapper').height();
         console.log(height);
@@ -53,7 +59,7 @@ $(function () {
             if (scrollTop + 100 > height) {
                 $('.fluid-nav').css({'background-color': 'rgba(0,0,0,1)' });
             } else {
-                $('.fluid-nav').css({'background-color': 'transparent' });
+                $('.fluid-nav').css({'background-color': 'rgba(0,0,0,0.5)' });
             }
         };
 
@@ -72,11 +78,16 @@ $(function () {
         }, 500);
     });
 
+/*********************************************
+  
+              MALA NAVIGACIJA
+ 
+********************************************/
+
     $('.location-icon').mouseover(function(){
         $('.fixed-nav').css({'background-color':'rgba(0,0,0,0.4)'});
         $('.phone-p').find('p').css({'color':'#fff'});
         $('.location-p').find('p').css({'color':'#fff'});
-        $(this).fadeIn(500);
     });
     $('.location-icon').mouseleave(function(){
         $('.fixed-nav').css({'background-color':'transparent'});
@@ -88,7 +99,6 @@ $(function () {
         $('.fixed-nav').css({'background-color':'rgba(0,0,0,0.4)'});
         $('.phone-p').find('p').css({'color':'#fff'});
         $('.location-p').find('p').css({'color':'#fff'});
-        $(this).fadeIn(500);
     });
     $('.phone-icon').mouseleave(function(){
         $('.fixed-nav').css({'background-color':'transparent'});
@@ -97,6 +107,11 @@ $(function () {
         
     });
 
+/*********************************************
+  
+           STERELICE NA SLAJDERU
+ 
+********************************************/
     $('.bx-wrapper').mouseover(function(){
         $('.bx-controls-direction').fadeIn(500);
     });
