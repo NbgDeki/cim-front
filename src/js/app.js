@@ -36,17 +36,40 @@ $(function () {
         }
     });
 
-    $('.js-hover').hover(function () {
-        $(this).find('ul').addClass('open');
-    }, function () {
-        $(this).find('ul').removeClass('open');
-    });
-
     // $('.js-hover').hover(function () {
-    //     $(this).find('ul').fadeIn(500);
+    //     $(this).find('ul').addClass('open');
     // }, function () {
-    //     $(this).find('ul').fadeOut(500);
+    //     $(this).find('ul').removeClass('open');
     // });
+    
+
+        var len = $('#double li').length;
+        console.log('duzina ' + len);
+
+        $('.collections').mouseover(function(){
+            var len = $('#double li').length;
+            for (var i = 0; i < len; i++) {
+                (function(i) {
+                    setTimeout(function () {
+                        $('#double li').eq(i).css({'transform': 'rotateX(0)', 'backface-visibility': 'hidden', 'transition-duration': '0.8s', 'opacity':'1'});
+                    }, i * 100);
+                })(i);
+            }
+        });
+
+        $('.collections').mouseout(function(){
+
+            for (var i = 0; i < len; i++) {
+                (function(i) {
+                    setTimeout(function () {
+                        $('#double li').eq(i).css({'transform': 'rotateX(180deg)', 'backface-visibility': 'hidden', 'transition-duration': '.5s'});
+                    }, i * 100);
+                })(i);
+            }
+        });
+
+
+
 
     if($('.slider').length > 0){
         var height = $('.bx-wrapper').height();
@@ -57,9 +80,9 @@ $(function () {
             console.log(scrollTop);
 
             if (scrollTop + 100 > height) {
-                $('.fluid-nav').css({'background-color': 'rgba(0,0,0,1)' });
+                $('.fluid-nav').css({'background-color': 'rgba(24,24,24,1)' });
             } else {
-                $('.fluid-nav').css({'background-color': 'rgba(0,0,0,0.5)' });
+                $('.fluid-nav').css({'background-color': 'rgba(24,24,24,0.5)' });
             }
         };
 
@@ -68,10 +91,10 @@ $(function () {
             stickyNav();
         });
     }else{
-        $('.fluid-nav').css({'background-color': 'rgba(0,0,0,1)' });
+        $('.fluid-nav').css({'background-color': 'rgba(24,24,24,0.5)' });
     }
 
-    $("#collections").click(function(e) {
+    $(".nav-collections").click(function(e) {
         e.preventDefault();
         $('html, body').animate({
             scrollTop: $("#grid1").offset().top - 100
