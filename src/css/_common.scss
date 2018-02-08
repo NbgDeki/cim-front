@@ -28,18 +28,20 @@ body{
   background: $primary;
 }
 .container{
-  @include media-breakpoint-up(xs) {}
-  @include media-breakpoint-up(sm) {
+  @include max-breakpoint(xs) {
     max-width: 526px;
   }
-  @include media-breakpoint-up(md) {
+  @include max-breakpoint(sm) {
     max-width: 720px;
   }
-  @include media-breakpoint-up(lg) {
+  @include max-breakpoint(md) {
     max-width: 940px;
   }
+  @include media-breakpoint-up(lg) {
+    max-width: 1150px;
+  }
   @include media-breakpoint-up(xl) {
-    max-width: 1200px;
+    max-width: 1290px;
   }
 }
 .fixed-nav{
@@ -214,7 +216,7 @@ body{
 }
 
 #site-content{
-  min-height: 2100px;
+  // min-height: 2100px;
 
   -webkit-transition: all 0.5s; /* Safari */
   transition: all 0.5s;
