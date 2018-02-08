@@ -12,9 +12,13 @@ import faPhone from '@fortawesome/fontawesome-free-solid/faPhone';
 import faFacebookF from '@fortawesome/fontawesome-free-brands/faFacebookF';
 import faInstagram from '@fortawesome/fontawesome-free-brands/faInstagram';
 import faEnvelope from '@fortawesome/fontawesome-free-regular/faEnvelope';
+import faLinkedin from '@fortawesome/fontawesome-free-brands/faLinkedin';
+import faPinterestSquare from '@fortawesome/fontawesome-free-brands/faPinterestSquare';
+
+
 
 // Add the icon to the library so you can use it in your page
-fontawesome.library.add(faPlus, faBars, faAngleRight, faFacebookF, faInstagram, faMapMarkerAlt, faPhone, faEnvelope);
+fontawesome.library.add(faPlus, faBars, faAngleRight, faFacebookF, faInstagram, faMapMarkerAlt, faPhone, faEnvelope, faLinkedin, faPinterestSquare);
 
 $(function () {
     $('.collapse').collapse('hide');
@@ -32,22 +36,53 @@ $(function () {
         }
     });
 
-    $('.js-hover').hover(function () {
-        $(this).find('ul').addClass('open');
-    }, function () {
-        $(this).find('ul').removeClass('open');
-    });
+    // $('.js-hover').hover(function () {
+    //     $(this).find('ul').addClass('open');
+    // }, function () {
+    //     $(this).find('ul').removeClass('open');
+    // });
+    
+
+        var len = $('#double li').length;
+        console.log('duzina ' + len);
+
+        $('.collections').mouseover(function(){
+            var len = $('#double li').length;
+            for (var i = 0; i < len; i++) {
+                (function(i) {
+                    setTimeout(function () {
+                        $('#double li').eq(i).css({'transform': 'rotateX(0)', 'backface-visibility': 'hidden', 'transition-duration': '0.8s', 'opacity':'1'});
+                    }, i * 100);
+                })(i);
+            }
+        });
+
+        $('.collections').mouseout(function(){
+
+            for (var i = 0; i < len; i++) {
+                (function(i) {
+                    setTimeout(function () {
+                        $('#double li').eq(i).css({'transform': 'rotateX(180deg)', 'backface-visibility': 'hidden', 'transition-duration': '.5s'});
+                    }, i * 100);
+                })(i);
+            }
+        });
+
+
+
 
     if($('.slider').length > 0){
-        var height = $('.slider').height();
+        var height = $('.bx-wrapper').height();
+        console.log(height);
 
         var stickyNav = function(){
             var scrollTop = $(window).scrollTop(); // our current vertical position from the top
+            console.log(scrollTop);
 
             if (scrollTop + 100 > height) {
-                $('.fluid-nav').css({'background-color': 'rgba(0,0,0,0.5)' });
+                $('.fluid-nav').css({'background-color': 'rgba(24,24,24,1)' });
             } else {
-                $('.fluid-nav').css({'background-color': 'transparent' });
+                $('.fluid-nav').css({'background-color': 'rgba(24,24,24,0.5)' });
             }
         };
 
@@ -56,13 +91,55 @@ $(function () {
             stickyNav();
         });
     }else{
-        $('.fluid-nav').css({'background-color': 'rgba(0,0,0,0.5)' });
+        $('.fluid-nav').css({'background-color': 'rgba(24,24,24,0.5)' });
     }
 
-    $("#collections").click(function(e) {
+    $(".nav-collections").click(function(e) {
         e.preventDefault();
         $('html, body').animate({
-            scrollTop: $(".parent-flex-container").offset().top - 100
+            scrollTop: $("#grid1").offset().top - 100
         }, 500);
     });
+
+/*********************************************
+  
+              MALA NAVIGACIJA
+ 
+********************************************/
+
+    $('.location-icon').mouseover(function(){
+        $('.fixed-nav').css({'background-color':'rgba(0,0,0,0.4)'});
+        $('.phone-p').find('p').css({'color':'#fff'});
+        $('.location-p').find('p').css({'color':'#fff'});
+    });
+    $('.location-icon').mouseleave(function(){
+        $('.fixed-nav').css({'background-color':'transparent'});
+        $('.phone-p').find('p').css({'color':'transparent'});
+        $('.location-p').find('p').css({'color':'transparent'});
+        
+    });
+    $('.phone-icon').mouseover(function(){
+        $('.fixed-nav').css({'background-color':'rgba(0,0,0,0.4)'});
+        $('.phone-p').find('p').css({'color':'#fff'});
+        $('.location-p').find('p').css({'color':'#fff'});
+    });
+    $('.phone-icon').mouseleave(function(){
+        $('.fixed-nav').css({'background-color':'transparent'});
+        $('.phone-p').find('p').css({'color':'transparent'});
+        $('.location-p').find('p').css({'color':'transparent'});
+        
+    });
+
+/*********************************************
+  
+           STERELICE NA SLAJDERU
+ 
+********************************************/
+    $('.bx-wrapper').mouseover(function(){
+        $('.bx-controls-direction').fadeIn(500);
+    });
+    $('.bx-wrapper').mouseleave(function(){
+        $('.bx-controls-direction').fadeOut(500);
+    });
+  
 });
