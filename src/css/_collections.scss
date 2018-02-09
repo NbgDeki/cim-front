@@ -20,6 +20,12 @@
         left: 50%;
         top: 50%;
         transform: translate(-50%,-50%);
+        @include max-breakpoint(lg){
+            top: 60%;
+        }
+        @include max-breakpoint(xxs){
+            left: 46%;
+        }
         h5{
             text-transform: uppercase;
             font-family: 'Lato', sans-serif;

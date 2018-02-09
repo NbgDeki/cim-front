@@ -1,4 +1,7 @@
 @mixin max-breakpoint($class) {
+  @if $class == xxs {
+    @media (max-width: 359px) { @content; }
+  }
   @if $class == xs {
     @media (max-width: 576px) { @content; }
   }
@@ -24,6 +27,9 @@
 }
 
 @mixin min-breakpoint($class) {
+  @if $class == xxs {
+    @media (min-width: 359px) { @content; }
+  }
   @if $class == xs {
     @media (min-width: 576px) { @content; }
   }
@@ -44,6 +50,6 @@
   }
 
   @else {
-    @warn "Breakpoint mixin supports: xs, sm, md, lg, xl";
+    @warn "Breakpoint mixin supports: xxs,xs, sm, md, lg, xl";
   }
 }
