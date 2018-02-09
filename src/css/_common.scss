@@ -265,7 +265,7 @@ body{
     height: 450px;
     position: absolute;
     top: 150px;
-    left: 50%;
+    left: 49%;
     margin-left: -586px;
     z-index: 6;
     overflow: hidden;
@@ -294,7 +294,7 @@ body{
       display: none;
     }
     @include media-breakpoint-between(md, lg) {
-      left: 63%;
+      left: 64%;
       top: 135px;
     }
     #double{
@@ -353,9 +353,11 @@ body{
       left: 0;
       top: 0;
       padding: 20px 0;
+      padding-left: 40px;
       @include max-breakpoint(md){
         width: 100%;
         text-align: center;
+        padding-left: 0;
       }
     }
 
@@ -504,6 +506,9 @@ body{
         color: $secondary;
         font-size: 18px;
         font-family: 'Lato', sans-serif;
+        @include max-breakpoint(xs){
+          padding: 0 10px;
+        }
       }
 
       button{
@@ -633,6 +638,9 @@ body{
       color: $black;
       text-transform: uppercase;
       margin-bottom: 30px;
+      @include max-breakpoint(xs){
+        margin-top: 30px;
+      }
     }
 
     p{
@@ -733,7 +741,7 @@ body{
           left: 245px;
           top: 460px;
         }
-        @include media-breakpoint-down(xs) {
+        @include media-breakpoint-down(sm) {
          display: none;
         }
 

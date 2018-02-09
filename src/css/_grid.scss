@@ -212,6 +212,19 @@
                 opacity: 0;
                 padding-left: 30px;
                 text-align: left;
+                .strelica{
+                    position: absolute;
+                    right: 30px;
+                    top: 18px;
+                    height: 8px;
+                    width: 8px;
+                    border-top: 1px solid #fff;
+                    border-right: 1px solid #fff; 
+                    transform: rotate(45deg);
+                }
+                @include max-breakpoint(xs){
+                    opacity: 1;
+                }
                 &:hover{
                     background-color: #451d08;
                 }
