@@ -44,7 +44,6 @@ $(function () {
     
 
         var len = $('#double li').length;
-        console.log('duzina ' + len);
 
         $('.collections').mouseover(function(){
             var len = $('#double li').length;
@@ -70,14 +69,16 @@ $(function () {
 
 
 
-
+/*********************************************
+  
+           TRANSPARENTNA NAVIGACIJA
+ 
+********************************************/
     if($('.slider').length > 0){
         var height = $('.bx-wrapper').height();
-        console.log(height);
 
         var stickyNav = function(){
             var scrollTop = $(window).scrollTop(); // our current vertical position from the top
-            console.log(scrollTop);
 
             if (scrollTop + 100 > height) {
                 $('.fluid-nav').css({'background-color': 'rgba(24,24,24,1)' });
@@ -92,8 +93,34 @@ $(function () {
         });
     }else{
         $('.fluid-nav').css({'background-color': 'rgba(24,24,24,0.5)' });
-    }
+    };
 
+    if($('.hero-img-container').length > 0){
+        var height = $('.hero-img-container').height();
+
+        var stickyNav = function(){
+            var scrollTop = $(window).scrollTop(); // our current vertical position from the top
+
+            if (scrollTop + 100 > height) {
+                $('.fluid-nav').css({'background-color': 'rgba(24,24,24,1)' });
+            } else {
+                $('.fluid-nav').css({'background-color': 'rgba(24,24,24,0.5)' });
+            }
+        };
+
+        stickyNav();
+        $(window).scroll(function() {
+            stickyNav();
+        });
+    }else{
+        $('.fluid-nav').css({'background-color': 'rgba(24,24,24,0.5)' });
+    };
+
+/*********************************************
+  
+            KLIK DO KOLEKCIJA
+ 
+********************************************/    
     $(".nav-collections").click(function(e) {
         e.preventDefault();
         $('html, body').animate({

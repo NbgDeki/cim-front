@@ -1,0 +1,47 @@
+.partners{
+    .row{
+
+    }
+    .list-of-partners{
+        margin-bottom: 65px;
+        padding-left: 60px;
+        @include max-breakpoint(xs){
+            padding-left: 15px;
+        }
+        h4{
+            font-size: 20px;
+            font-weight: 400;
+            color: $primary;
+            margin: 40px 0;
+        }
+        ul{
+            list-style: none;
+            padding-left: 0;
+            li{
+                float:left;
+                display:inline-block;
+                a{
+                    text-decoration: none;
+                    color: $secondary;
+                    font-size: 18px;
+                    font-weight: 400;
+                    text-transform: uppercase;
+                    transition: all .5s ease;
+                    &:hover{
+                        color: $primary;
+                    }
+                }
+            }   
+        }
+        #triple li{
+            width: 33.33%;
+            @include max-breakpoint(md){
+                width: 50%;
+            }
+            @include max-breakpoint(sm){
+                width: 100%;
+            }
+        }
+    }
+}
+

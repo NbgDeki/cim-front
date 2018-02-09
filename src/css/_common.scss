@@ -12,6 +12,7 @@ body{
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  font-family: 'Lato', sans-serif;
 }
 .container-fluid, .container{
   padding: 0;
@@ -28,24 +29,11 @@ body{
   background: $primary;
 }
 .container{
-  @include max-breakpoint(xs) {
-    max-width: 526px;
-  }
-  @include max-breakpoint(sm) {
-    max-width: 720px;
-  }
-  @include max-breakpoint(md) {
-    max-width: 940px;
-  }
-  @include media-breakpoint-up(lg) {
-    max-width: 1150px;
-  }
-  @include media-breakpoint-up(xl) {
-    max-width: 1290px;
-  }
+@include min-breakpoint(lg){
+  max-width: 1200px;
+}
 }
 .fixed-nav{
-  // background-color: rgba($color: #000000, $alpha: .4);
   position: fixed;
   right: 0;
   top: calc(35vh - 40px);
@@ -266,7 +254,7 @@ body{
     position: absolute;
     top: 150px;
     left: 49%;
-    margin-left: -586px;
+    margin-left: -585px;
     z-index: 6;
     overflow: hidden;
     transition: max-height 4s;
@@ -293,7 +281,11 @@ body{
     @include max-breakpoint(md){
       display: none;
     }
-    @include media-breakpoint-between(md, lg) {
+    // @include media-breakpoint-between(md, lg) {
+    //   left: 63%;
+    //   top: 135px;
+    // }
+    @include max-breakpoint(lg){
       left: 64%;
       top: 135px;
     }
@@ -353,8 +345,15 @@ body{
       left: 0;
       top: 0;
       padding: 20px 0;
-      padding-left: 40px;
+      @include max-breakpoint(lg){
+        padding-left: 40px;
+      }
       @include max-breakpoint(md){
+        width: 100%;
+        text-align: center;
+        padding-left: 0;
+      }
+      @include max-breakpoint(sm){
         width: 100%;
         text-align: center;
         padding-left: 0;
