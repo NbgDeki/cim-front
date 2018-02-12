@@ -105,10 +105,16 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'contact.html',
             template: 'src/contact.html'
-        }),new HtmlWebpackPlugin({
+        }),
+        new HtmlWebpackPlugin({
             filename: 'news-open.html',
             template: 'src/news-open.html'
         }),
+        new HtmlWebpackPlugin({
+            filename: 'news.html',
+            template: 'src/news.html'
+        }),
+        
         /*new webpack.optimize.CommonsChunkPlugin({
             name: "commons",
             filename: "commons.js",
