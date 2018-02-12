@@ -24,7 +24,7 @@
             top: 60%;
         }
         @include max-breakpoint(xxs){
-            left: 46%;
+            width: fit-content;
         }
         h5{
             text-transform: uppercase;

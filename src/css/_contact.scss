@@ -23,6 +23,9 @@
                 grid-column: span 12;
                 padding: 0 15px;
             }
+            @include max-breakpoint(xxs){
+            padding-left: 6px;
+            }
             .form-group{
                 label{
                     color: $secondary;
@@ -94,6 +97,9 @@
             grid-column: span 12;
             padding: 0 15px;
         }
+        @include max-breakpoint(xxs){
+            padding-left: 6px;
+        }
         label{
             color: $secondary;
                     font-weight: 400;
@@ -131,6 +137,9 @@
             padding-bottom: 30px;
             padding: 0 15px;
         }
+        @include max-breakpoint(xxs){
+            padding-bottom: 30px;
+        }
         h4{
             font-size: 26px;
             font-weight: 400;
@@ -146,8 +155,8 @@
             font-weight: 400;
             color: $secondary;
             span{
-                color: $black;
-                font-weight: 500;
+                color: $secondary;
+                font-weight: 700;
                 text-transform: capitalize;
             }
             }

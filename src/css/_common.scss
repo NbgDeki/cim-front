@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet');
 .bx-controls-direction{
   display: none;
 }
@@ -29,6 +29,9 @@ body{
   background: $primary;
 }
 .container{
+  @include max-breakpoint(xxs){
+    max-width: 330px;
+  }
 @include min-breakpoint(lg){
   max-width: 1200px;
 }

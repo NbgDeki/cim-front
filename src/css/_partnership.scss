@@ -5,6 +5,9 @@
     .list-of-partners{
         margin-bottom: 65px;
         padding-left: 60px;
+        @include max-breakpoint(sm){
+            text-align: center;
+        }
         @include max-breakpoint(xs){
             padding-left: 15px;
         }

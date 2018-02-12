@@ -2,20 +2,23 @@
 .corporate{
   margin-top: 40px;
   margin-bottom: 70px;
-
+  @include  max-breakpoint(xs){
+    text-align: center;
+  }
   h1{
     font-size: 30px;
     color: $primary;
     text-transform: uppercase;
     font-family: 'Lato', sans-serif;
-    margin-bottom: 50px;
+    margin-bottom: 35px;
   }
 
   h3{
     font-size: 20px;
     color: $primary;
     font-family: 'Lato', sans-serif;
-    margin-bottom: 45px;
+    margin-bottom: 15px;
+    font-weight: 700;
   }
 
   p{
@@ -28,9 +31,10 @@
       margin-bottom: 20px;
     }
   }
-
+  p.proposing{
+    margin-bottom: 15px;
+  }
   .boxes{
-
     h3{
       color: $primary;
       text-transform: uppercase;
@@ -59,14 +63,15 @@
 
       li{
         list-style: square;
-        list-style-color: $primary;
         width: 100%;
       }
     }
   }
 
   .corporate-images{
-
+    @include max-breakpoint(sm){
+      display: none;
+    }
     img{
       display: block;
       width: 100%;
