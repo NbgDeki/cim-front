@@ -14,11 +14,13 @@ import faInstagram from '@fortawesome/fontawesome-free-brands/faInstagram';
 import faEnvelope from '@fortawesome/fontawesome-free-regular/faEnvelope';
 import faLinkedin from '@fortawesome/fontawesome-free-brands/faLinkedin';
 import faPinterestSquare from '@fortawesome/fontawesome-free-brands/faPinterestSquare';
+import faGooglePlusG from '@fortawesome/fontawesome-free-brands/faGooglePlusG';
+import faTwitter from '@fortawesome/fontawesome-free-brands/faTwitter';
 
 
 
 // Add the icon to the library so you can use it in your page
-fontawesome.library.add(faPlus, faBars, faAngleRight, faFacebookF, faInstagram, faMapMarkerAlt, faPhone, faEnvelope, faLinkedin, faPinterestSquare);
+fontawesome.library.add(faPlus, faBars, faAngleRight, faFacebookF, faInstagram, faMapMarkerAlt, faPhone, faEnvelope, faLinkedin, faPinterestSquare, faGooglePlusG, faTwitter);
 
 $(function () {
     $('.collapse').collapse('hide');
