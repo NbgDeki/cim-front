@@ -145,26 +145,21 @@ $(function () {
 ********************************************/
 
     $('.location-icon').mouseover(function(){
-        $('.fixed-nav').css({'background-color':'rgba(0,0,0,0.4)'});
-        $('.phone-p').find('p').css({'color':'#fff'});
+        $('.location-p').css({'background-color':'rgba(0,0,0,0.4)'});
         $('.location-p').find('p').css({'color':'#fff'});
     });
     $('.location-icon').mouseleave(function(){
-        $('.fixed-nav').css({'background-color':'transparent'});
-        $('.phone-p').find('p').css({'color':'transparent'});
+        $('.location-p').css({'background-color':'transparent'});
         $('.location-p').find('p').css({'color':'transparent'});
         
     });
     $('.phone-icon').mouseover(function(){
-        $('.fixed-nav').css({'background-color':'rgba(0,0,0,0.4)'});
+        $('.phone-p').css({'background-color':'rgba(0,0,0,0.4)'});
         $('.phone-p').find('p').css({'color':'#fff'});
-        $('.location-p').find('p').css({'color':'#fff'});
     });
     $('.phone-icon').mouseleave(function(){
-        $('.fixed-nav').css({'background-color':'transparent'});
+        $('.phone-p').css({'background-color':'transparent'});
         $('.phone-p').find('p').css({'color':'transparent'});
-        $('.location-p').find('p').css({'color':'transparent'});
-        
     });
 
 /*********************************************

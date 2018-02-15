@@ -37,15 +37,15 @@ body{
   max-width: 1200px;
 }
 }
-.fixed-nav{
-  position: fixed;
-  right: 0;
-  top: calc(35vh - 40px);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  z-index: 9999 !important;
-  transition: all .5s ease;
+// .fixed-nav{
+//   position: fixed;
+//   right: 0;
+//   top: calc(35vh - 40px);
+//   display: flex;
+//   flex-direction: column;
+//   align-items: flex-end;
+//   z-index: 9999 !important;
+//   transition: all .5s ease;
   @include max-breakpoint(md){
     display: none;
   }
@@ -53,9 +53,12 @@ body{
     top: 135px;
   }
   .location{
+    position: fixed;
+    right: 0;
+    z-index: 10;
+    top: calc(35vh - 40px);
     display: flex;
     align-items: center;
-    margin-bottom: 3px;
   }
   .location-p{
     display: flex;
@@ -82,13 +85,19 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    // margin-left: 15px;
     border: 1px solid $secondary;
+    a{
+      padding: 8px 14px;
+    }
     .fa-map-marker-alt{
       color: #fff;
     }
   }
   .phone{
+    position: fixed;
+    right: 0;
+    z-index: 10;
+    top: calc(35vh + 3px);
     display: flex;
     align-items: center;
   }
@@ -99,6 +108,7 @@ body{
     padding: 0 15px;
     a{
       text-decoration: none;
+      padding: 8px 11px;
     }
     p{
       font-family: 'Lato', sans-serif;
@@ -110,7 +120,6 @@ body{
     }
   }
   .phone-icon{
-    // margin-left: 15px;
     height: 40px;
     width: 40px;
     background-color: #fff;
@@ -118,11 +127,14 @@ body{
     justify-content: center;
     align-items: center;
     border: 1px solid $secondary;
+    a{
+      padding: 8px 11px;
+    }
     .fa-phone{
       color: $secondary;
     }
   }
-  }
+  // }
 #side-menu{
   position: fixed;
   display: block;
