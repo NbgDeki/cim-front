@@ -130,6 +130,14 @@ $(function () {
         }, 500);
     });
 
+    var url = location.href;
+    var hash = url.substring(url.indexOf('#')); // '#foo'
+    console.log(hash);
+    if(hash=="#collections"){
+        $('html, body').animate({
+            scrollTop: $("#grid1").offset().top - 100
+        }, 500);
+    };
 /*********************************************
   
               MALA NAVIGACIJA
