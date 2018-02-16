@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet');
 .bx-controls-direction{
   display: none;
 }
@@ -12,6 +12,8 @@ body{
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  font-family: 'Lato', sans-serif;
+  background-color: $body-color;
 }
 .container-fluid, .container{
   padding: 0;
@@ -28,30 +30,22 @@ body{
   background: $primary;
 }
 .container{
-  @include media-breakpoint-up(xs) {}
-  @include media-breakpoint-up(sm) {
-    max-width: 526px;
+  @include max-breakpoint(xxs){
+    max-width: 330px;
   }
-  @include media-breakpoint-up(md) {
-    max-width: 720px;
-  }
-  @include media-breakpoint-up(lg) {
-    max-width: 940px;
-  }
-  @include media-breakpoint-up(xl) {
-    max-width: 1200px;
-  }
+@include min-breakpoint(lg){
+  max-width: 1200px;
 }
-.fixed-nav{
-  // background-color: rgba($color: #000000, $alpha: .4);
-  position: fixed;
-  right: 0;
-  top: calc(35vh - 40px);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  z-index: 9999 !important;
-  transition: all .5s ease;
+}
+// .fixed-nav{
+//   position: fixed;
+//   right: 0;
+//   top: calc(35vh - 40px);
+//   display: flex;
+//   flex-direction: column;
+//   align-items: flex-end;
+//   z-index: 9999 !important;
+//   transition: all .5s ease;
   @include max-breakpoint(md){
     display: none;
   }
@@ -59,9 +53,12 @@ body{
     top: 135px;
   }
   .location{
+    position: fixed;
+    right: 0;
+    z-index: 10;
+    top: calc(35vh - 40px);
     display: flex;
     align-items: center;
-    margin-bottom: 3px;
   }
   .location-p{
     display: flex;
@@ -88,13 +85,19 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    // margin-left: 15px;
     border: 1px solid $secondary;
+    a{
+      padding: 8px 14px;
+    }
     .fa-map-marker-alt{
       color: #fff;
     }
   }
   .phone{
+    position: fixed;
+    right: 0;
+    z-index: 10;
+    top: calc(35vh + 3px);
     display: flex;
     align-items: center;
   }
@@ -105,6 +108,7 @@ body{
     padding: 0 15px;
     a{
       text-decoration: none;
+      padding: 8px 11px;
     }
     p{
       font-family: 'Lato', sans-serif;
@@ -116,7 +120,6 @@ body{
     }
   }
   .phone-icon{
-    // margin-left: 15px;
     height: 40px;
     width: 40px;
     background-color: #fff;
@@ -124,11 +127,14 @@ body{
     justify-content: center;
     align-items: center;
     border: 1px solid $secondary;
+    a{
+      padding: 8px 11px;
+    }
     .fa-phone{
       color: $secondary;
     }
   }
-  }
+  // }
 #side-menu{
   position: fixed;
   display: block;
@@ -214,7 +220,7 @@ body{
 }
 
 #site-content{
-  min-height: 2100px;
+  // min-height: 2100px;
 
   -webkit-transition: all 0.5s; /* Safari */
   transition: all 0.5s;
@@ -263,8 +269,8 @@ body{
     height: 450px;
     position: absolute;
     top: 150px;
-    left: 50%;
-    margin-left: -586px;
+    left: 49%;
+    margin-left: -585px;
     z-index: 6;
     overflow: hidden;
     transition: max-height 4s;
@@ -291,8 +297,12 @@ body{
     @include max-breakpoint(md){
       display: none;
     }
-    @include media-breakpoint-between(md, lg) {
-      left: 63%;
+    // @include media-breakpoint-between(md, lg) {
+    //   left: 63%;
+    //   top: 135px;
+    // }
+    @include max-breakpoint(lg){
+      left: 64%;
       top: 135px;
     }
     #double{
@@ -351,9 +361,18 @@ body{
       left: 0;
       top: 0;
       padding: 20px 0;
+      @include max-breakpoint(lg){
+        padding-left: 40px;
+      }
       @include max-breakpoint(md){
         width: 100%;
         text-align: center;
+        padding-left: 0;
+      }
+      @include max-breakpoint(sm){
+        width: 100%;
+        text-align: center;
+        padding-left: 0;
       }
     }
 
@@ -502,6 +521,9 @@ body{
         color: $secondary;
         font-size: 18px;
         font-family: 'Lato', sans-serif;
+        @include max-breakpoint(xs){
+          padding: 0 10px;
+        }
       }
 
       button{
@@ -631,6 +653,9 @@ body{
       color: $black;
       text-transform: uppercase;
       margin-bottom: 30px;
+      @include max-breakpoint(xs){
+        margin-top: 30px;
+      }
     }
 
     p{
@@ -731,7 +756,7 @@ body{
           left: 245px;
           top: 460px;
         }
-        @include media-breakpoint-down(xs) {
+        @include media-breakpoint-down(sm) {
          display: none;
         }
 
