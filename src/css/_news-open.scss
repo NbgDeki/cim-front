@@ -164,6 +164,8 @@
     }
 
     .related{
+        margin: 30px -15px auto -15px;
+
         .item{
             display: block;
             width: fit-content;
@@ -180,10 +182,7 @@
                 overflow: hidden;
                 img{
                     transition: all .5s ease;
-
-                    @include max-breakpoint(xs){
-                        width: 100%;
-                    }
+                    width: 100%;
                 }
             }
             .text-holder{
