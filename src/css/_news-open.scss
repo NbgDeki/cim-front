@@ -64,6 +64,11 @@
                 padding-top: 10px;
                 margin-bottom: 30px;
             }
+            img{
+                display: block;
+                width: 100%;
+                height: auto;
+            }
         }
         .news-open-social{
             grid-column: span 12;
