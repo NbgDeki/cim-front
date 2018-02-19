@@ -10,8 +10,14 @@
         @include max-breakpoint(md){
             margin-top: 0;
         }
-
+        .naslov{
+            padding: 0;
+            @include max-breakpoint(md){
+                padding: 0 15px;
+            }
+        }
         .sakrij{
+            padding-right: 0;
             @include max-breakpoint(md){
                display: none;
             }
@@ -32,6 +38,24 @@
                     @include max-breakpoint(md){
                         grid-column: span 12;
                     }
+                    .img-wrapper-inner{
+                        position: relative;
+                    }
+                    .img-wrapper-text{
+                        padding-top: 30px;
+                        padding-left: 30px;
+                        h4{
+                            font-size: 20px;
+                            font-weight: 400;
+                            color: $secondary;
+                            margin-bottom: 30px;
+                        }
+                        p{
+                            font-size: 16px;
+                            font-weight: 400;
+                            color: $secondary;
+                        }
+                    }
                 }
                 .kvadrat-desno{
                     position: absolute;
@@ -41,6 +65,7 @@
                     border-right: 1px solid $white;
                     right: 30px;
                     top: 50%;
+                    cursor: pointer;
                     transform: rotate(45deg) translate(0, -50%);
                 }
                 .kvadrat-levo{
@@ -51,6 +76,7 @@
                     border-left: 1px solid $white;
                     left: 30px;
                     top: 50%;
+                    cursor: pointer;
                     transform: rotate(-45deg) translate(0, -50%);
                 }
                 .text-holder{
@@ -59,6 +85,28 @@
                     padding-left: 10px;
                     @include max-breakpoint(md){
                         grid-column: span 12;
+                    }
+                    .version2{
+                        h6{
+                            color: $primary;
+                            font-size: 16px;
+                            font-weight: 700;
+                            margin: 20px 0;
+                        }
+                        p{
+                            color: $secondary;
+                            font-size: 16px;
+                            font-weight: 400;
+                            text-transform: capitalize;
+                            margin-bottom: 7px;
+                            span{
+                                color: $span-solor;
+                                font-size: 16px;
+                                font-weight: 700;
+                                text-transform: lowercase;
+                                margin-left: 20px;
+                            }
+                        }
                     }
                 }
             }
@@ -114,8 +162,8 @@
         }
 
         .news-open{
-            grid-column: 2/12;
-            padding: 0 30px;
+            grid-column: span 12;
+            padding: 0 15px;
             position: relative;
             /*top: -270px;*/
             @include max-breakpoint(lg){
@@ -155,7 +203,7 @@
         }
 
         .product-heading{
-            padding: 40px 0 10px 0;
+            padding: 40px 0;
             flex-shrink: 0;            
             @include max-breakpoint(md){
                 padding-top: 135px;
@@ -178,6 +226,7 @@
                 }
             }
         }
+        
         .news-open-image-wrapper{
             padding: 0;
             margin-bottom: 30px;
@@ -203,9 +252,9 @@
         }
 
         .product-social{
-            grid-column: 2/12;
+            grid-column: span 12;
             background-color: white;
-            padding: 0 45px;
+            padding: 0 30px;
             @include max-breakpoint(lg){
                 grid-column: 1/13;
             }
