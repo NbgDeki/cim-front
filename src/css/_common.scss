@@ -59,6 +59,9 @@ body{
     top: calc(35vh - 40px);
     display: flex;
     align-items: center;
+    @include max-breakpoint(md){
+      display: none;
+    }
   }
   .location-p{
     display: flex;
@@ -100,6 +103,9 @@ body{
     top: calc(35vh + 3px);
     display: flex;
     align-items: center;
+    @include max-breakpoint(md){
+      display: none;
+    }
   }
   .phone-p{
     display: flex;

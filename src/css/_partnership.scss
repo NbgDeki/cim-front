@@ -34,9 +34,9 @@
             }   
         }
         #triple li{
-            width: 33.33%;
+            width: 33%;
             @include max-breakpoint(md){
-                width: 50%;
+                width: 49%;
             }
             @include max-breakpoint(sm){
                 width: 100%;

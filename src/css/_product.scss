@@ -28,15 +28,35 @@
 
                 .img-wrapper{
                     grid-column: span 9;
-
+                    position: relative;
                     @include max-breakpoint(md){
                         grid-column: span 12;
                     }
                 }
-
+                .kvadrat-desno{
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    border-top: 1px solid $white;
+                    border-right: 1px solid $white;
+                    right: 30px;
+                    top: 50%;
+                    transform: rotate(45deg) translate(0, -50%);
+                }
+                .kvadrat-levo{
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    border-top: 1px solid $white;
+                    border-left: 1px solid $white;
+                    left: 30px;
+                    top: 50%;
+                    transform: rotate(-45deg) translate(0, -50%);
+                }
                 .text-holder{
                     grid-column: span 3;
-
+                    padding-top: 40px;
+                    padding-left: 10px;
                     @include max-breakpoint(md){
                         grid-column: span 12;
                     }
@@ -56,6 +76,7 @@
                 position: absolute;
                 top: 45%;
                 width: 100%;
+                display: none;
 
                 @include max-breakpoint(md){
                     top: 35%;
@@ -134,7 +155,7 @@
         }
 
         .product-heading{
-            padding: 40px 0 0 0;
+            padding: 40px 0 10px 0;
             flex-shrink: 0;            
             @include max-breakpoint(md){
                 padding-top: 135px;
@@ -144,7 +165,7 @@
             }
             h5{
                 font-size: 26px;
-                font-weight: 400;
+                font-weight: 300;
                 margin-bottom: 0;
                 color: $white;
                 flex-shrink: 0;
@@ -168,7 +189,7 @@
             }
             p{
                 font-size: 16px;
-                font-weight: 400;
+                font-weight: 300;
                 color: $secondary;
                 margin-bottom: 20px;
             }
@@ -182,10 +203,14 @@
         }
 
         .product-social{
-            grid-column: span 12;
+            grid-column: 2/12;
             background-color: white;
-            padding-top: 20px;
-            padding-bottom: 70px;
+            padding: 0 45px;
+            @include max-breakpoint(lg){
+                grid-column: 1/13;
+            }
+            // padding-top: 20px;
+            // padding-bottom: 70px;
             /*margin-top: -270px;*/
 
             @include max-breakpoint(xs){
@@ -208,6 +233,8 @@
                 }
             }
             .news-open-social-icons{
+                display: flex;
+                justify-content: flex-start;
                 ul{
                     display: flex;
                     list-style: none;
@@ -250,7 +277,7 @@
                     padding: 0;
                     font-size: 14px;
                     text-transform: uppercase;
-
+                    font-weight: 300;
                     &:hover{
                         text-decoration: none;
                     }
