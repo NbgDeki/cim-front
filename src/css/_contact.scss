@@ -109,7 +109,8 @@
         text-align: left;
         margin-left: 15px;
         display: none;
-
+        padding-bottom: 1px;
+        box-shadow: none;
         @include max-breakpoint(xs){
             margin-bottom: 0;
             display: block;
@@ -134,7 +135,7 @@
         .strelica{
             position: absolute;
             right: 27px;
-            top: 20px;
+            top: 22px;
             height: 8px;
             width: 8px;
             border-top: 1px solid #fff;
@@ -196,11 +197,13 @@
         }
         @include max-breakpoint(xs){
             grid-column: span 12;
-            padding-bottom: 30px;
+            padding-bottom: 30px !important;
             padding: 0 15px;
+            padding-top: 15px;
         }
         @include max-breakpoint(xxs){
-            padding-bottom: 30px;
+            padding-bottom: 30px !important;
+            padding-top: 15px;
         }
         h4{
             font-size: 26px;
