@@ -103,13 +103,14 @@
                             color: $secondary;
                             font-size: 16px;
                             font-weight: 400;
-                            text-transform: capitalize;
+                            // text-transform: capitalize;
                             margin-bottom: 7px;
+                            text-align: justify;
                             span{
                                 color: $span-solor;
                                 font-size: 16px;
                                 font-weight: 700;
-                                text-transform: lowercase;
+                                // text-transform: lowercase;
                                 margin-left: 20px;
                             }
                         }
@@ -360,7 +361,7 @@
                 }
 
                 img{
-                    width: auto;
+                    // width: auto;
                 }
             }
         }
