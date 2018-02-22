@@ -44,6 +44,11 @@
                     .img-wrapper-text{
                         padding-top: 30px;
                         padding-left: 30px;
+
+                        @include max-breakpoint(md){
+                            padding-left: 0;
+                        }
+
                         h4{
                             font-size: 20px;
                             font-weight: 400;
@@ -85,6 +90,7 @@
                     padding-left: 10px;
                     @include max-breakpoint(md){
                         grid-column: span 12;
+                        padding-left: 0;
                     }
                     .version2{
                         h6{
