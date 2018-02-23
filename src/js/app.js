@@ -173,5 +173,10 @@ $(function () {
     $('.bx-wrapper').mouseleave(function(){
         $('.bx-controls-direction').fadeOut(500);
     });
-  
+
+
+    // var link = 'https://www.emmezeta.rs/';
+    // $('.grid-item').click(function(){
+    //     window.open(link, '_blank');
+    // });
 });

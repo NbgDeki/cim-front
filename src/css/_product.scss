@@ -6,7 +6,7 @@
         grid-gap: 0;
         background-color: $white;
         margin-top: -270px;
-
+        padding-bottom: 20px;
         @include max-breakpoint(md){
             margin-top: 0;
         }
@@ -219,7 +219,7 @@
                 flex-shrink: 0;
             }
             h5{
-                font-size: 26px;
+                font-size: 36px;
                 font-weight: 300;
                 margin-bottom: 0;
                 color: $white;
